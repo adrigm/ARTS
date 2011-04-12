@@ -1,15 +1,18 @@
+#include "director.h"
 #include "scene_manager.h"
-#include "scene_map.h"
 
-int main (int argc, char *argv[])
+using namespace std;
+
+int main()
 {
-	SceneManager *sm = SceneManager::Instance();
-	SceneMap *scene = SceneMap::Instance();
-	sm->ChangeScene(scene);
-	sm->Loop();
+	Director *dir = Director::Instance();
+	SceneManager *manager = SceneManager::Instance();
+	manager->SetSceneMap();
+	dir->loop();
 
 	// Liberamos la memoria
-	sm->Release();
-	
+	dir->Release();
+	manager->Release();
+
 	return 0;
 }

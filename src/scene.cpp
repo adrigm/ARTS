@@ -1,17 +1,13 @@
 #include "scene.h"
-#include "scene_manager.h"
+#include "director.h"
 
 Scene::Scene()
 {
-	SceneManager *sm = SceneManager::Instance();
-	this->window = &sm->window;
+	Director *dir = Director::Instance();
+	this->window = &dir->window;
 }
 
 Scene::~Scene()
-{
-}
-
-void Scene::Init()
 {
 }
 
