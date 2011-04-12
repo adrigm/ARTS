@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="isometric" width="40" height="40" tilewidth="64" tileheight="32">
+ <properties>
+  <property name="name" value="Nombre del mapa"/>
+ </properties>
+ <tileset firstgid="1" name="tiled_dungeon" tilewidth="64" tileheight="128">
+  <image source="../graphics/tilesets/tiled_dungeon.png" width="1024" height="1920"/>
+ </tileset>
+ <tileset firstgid="241" name="medieval_building_tiles" tilewidth="64" tileheight="192">
+  <image source="../graphics/tilesets/medieval_building_tiles.png" width="1024" height="768"/>
+ </tileset>
+ <layer name="base" width="40" height="40">
+  <properties>
+   <property name="4y4y" value="544"/>
+   <property name="tyjtyjyj" value="55"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzjEKgDAQRNENeIHE+99VC9MFNt2qvAfTTPVHRBz3WgAA/F9PVi3rq278Wt9YfOezit6sbdVZ1fe2tt1GAACA6QLqfwTu
+  </data>
+ </layer>
+ <layer name="Edificios" width="40" height="40">
+  <data encoding="base64" compression="zlib">
+   eJzt0c0KgkAYheERWkcX0E2oUIFUm5YuXIURXUY3Hu7zCC50wL4hnGzxPvBuHH8O6BwAAECYbeLcJll6xbRu39rYd1KZqtW1r+6vdZ0j71sZ+27GO/LZ1ow16q1exn0P4zzWvlCpen44L9TOK+Y/992/eGY/+4ppacA9pboMqqIuGjuqg/d9v1/uAQAAAPDfWlOMDbE=
+  </data>
+ </layer>
+ <objectgroup name="eventos" width="40" height="40">
+  <properties>
+   <property name="otra" value="ede"/>
+   <property name="prop" value="5.0"/>
+  </properties>
+  <object name="nombre" type="tipo" x="526" y="495" width="55" height="33">
+   <properties>
+    <property name="aa" value="4"/>
+    <property name="fff" value="rrevre"/>
+    <property name="propiedad" value="5.0"/>
+   </properties>
+  </object>
+  <object x="634" y="578" width="56" height="35"/>
+  <object x="654" y="542"/>
+  <object x="657" y="535"/>
+  <object x="657" y="535"/>
+  <object x="735" y="845"/>
+  <object x="647" y="531"/>
+  <object x="652" y="518" width="32" height="15"/>
+ </objectgroup>
+</map>
