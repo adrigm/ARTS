@@ -18,7 +18,7 @@ public:
 	unsigned int height;
 	
 	// Datos de tiles
-	std::vector<unsigned int> data;
+	std::vector<std::vector<unsigned int> > data;
 };
 
 #endif // LAYER_H

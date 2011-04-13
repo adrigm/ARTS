@@ -1,0 +1,9 @@
+*.o
+*.o.d
+/obj/
+*.out
+*.tags
+*.mk
+*.session
+/rts
+/builds/codelite/cscope_file.list

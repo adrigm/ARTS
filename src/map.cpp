@@ -2,6 +2,13 @@
 
 Map::Map()
 {
+	this->name = "";
+}
+
+Map::Map(std::string filename)
+{
+	this->name = "";
+	this->LoadFile(filename);
 }
 
 Map::~Map()
@@ -98,6 +105,9 @@ bool Map::LoadFile(std::string filename)
 
 			// Obtenemos el nodo data
 			pugi::xml_node data = node.child("data");
+			
+			// Creamos array auxuliar
+			std::vector<unsigned int> values;
 
 			// Tipo de compresión
 			const std::string compression = data.attribute("compression").value();
@@ -146,9 +156,21 @@ bool Map::LoadFile(std::string filename)
 				for (int i = 0; i < binLen - 3; i += 4)
 				{
 					const int gid = binData[i] | binData[i + 1] << 8 | binData[i + 2] << 16 | binData[i + 3] << 24;
-					layer.data.push_back(gid);
+					values.push_back(gid);
 				}
 				//free(binData);
+			}
+			
+			int cont = 0;
+			for(int f=0; f < this->height; f++)
+			{
+				std::vector<unsigned int> aux;
+				for(int c=0; c < this->width; c++)
+				{
+					aux.push_back(values[cont]);
+					cont++;
+				}
+				layer.data.push_back(aux);
 			}
 			
 			// Añadimos la capa a la lista de capas
