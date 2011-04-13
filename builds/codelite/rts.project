@@ -9,8 +9,6 @@
   <Dependencies/>
   <VirtualDirectory Name="src">
     <VirtualDirectory Name="scenes">
-      <File Name="../../src/scene_menu.h"/>
-      <File Name="../../src/scene_menu.cpp"/>
       <File Name="../../src/scene_map.h"/>
       <File Name="../../src/scene_map.cpp"/>
     </VirtualDirectory>
@@ -19,6 +17,25 @@
     <File Name="../../src/scene.h"/>
     <File Name="../../src/scene_manager.cpp"/>
     <File Name="../../src/scene_manager.h"/>
+    <File Name="../../src/director.cpp"/>
+    <File Name="../../src/director.h"/>
+    <File Name="../../src/layer.cpp"/>
+    <File Name="../../src/layer.h"/>
+    <File Name="../../src/map.cpp"/>
+    <File Name="../../src/map.h"/>
+    <File Name="../../src/tileset.cpp"/>
+    <File Name="../../src/tileset.h"/>
+    <VirtualDirectory Name="utils">
+      <File Name="../../src/utils/base64.cpp"/>
+      <File Name="../../src/utils/base64.h"/>
+      <File Name="../../src/utils/zlib.cpp"/>
+      <File Name="../../src/utils/zlib.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="libs">
+      <File Name="../../src/libs/pugixml/pugiconfig.hpp"/>
+      <File Name="../../src/libs/pugixml/pugixml.cpp"/>
+      <File Name="../../src/libs/pugixml/pugixml.hpp"/>
+    </VirtualDirectory>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>
