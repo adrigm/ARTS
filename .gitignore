@@ -7,3 +7,4 @@
 *.session
 /rts
 /builds/codelite/cscope_file.list
+/libs/libpugixml.a

@@ -161,6 +161,7 @@ bool Map::LoadFile(std::string filename)
 				//free(binData);
 			}
 			
+			// Creamos un array bidimensional para los datos
 			int cont = 0;
 			for(int f=0; f < this->height; f++)
 			{
