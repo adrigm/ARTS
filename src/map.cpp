@@ -5,30 +5,20 @@ Map::Map()
 	this->name = "";
 }
 
-Map::Map(std::string filename)
-{
-	this->name = "";
-	this->LoadFile(filename);
-	
-	for (int i = 0; i < this->tilesets.size(); i++)
-	{
-		this->tilesets[i].Init();
-	}
-}
-
 Map::~Map()
 {
 }
 
 bool Map::Init(std::string src)
 {
-	this->name = "";
+	// Cargamos el mapa
 	if(!this->LoadFile(src))
 	{
 		std::cerr << "Error al cargar el mapa" << std::endl;
 		return false;
 	}
 	
+	// Iniciamos los tilesets
 	for (int i = 0; i < this->tilesets.size(); i++)
 	{
 		if(!this->tilesets[i].Init())
@@ -37,6 +27,10 @@ bool Map::Init(std::string src)
 			return false;
 		}
 	}
+	
+	// Establecemos la altura base de los tiles
+	this->height_base = this->tilesets[0].tile_height;
+	
 	return true;
 }
 
@@ -113,13 +107,6 @@ bool Map::LoadFile(std::string filename)
 			
 			// Añadimos el tileset a la lista de tilesets
 			this->tilesets.push_back(tileset);
-			
-			/*// Iniciamos el tileset (cargamos imagen y creamos sprite)
-			if(!this->tilesets[this->tilesets.size()-1].Init())
-			{
-				std::cerr << "Map::LoadFile: No se ha encontrado la imagen " << tileset.src_image << std::endl;
-				return false;
-			}*/
 		}
 		
 		// Si es un nodo de layer
@@ -213,9 +200,11 @@ bool Map::LoadFile(std::string filename)
 	return true;
 }
 
-sf::Vector2i Map::Plot(int x, int y)
+sf::Vector2i Map::Plot(int x, int y, int n_tileset)
 {
-	return sf::Vector2i(x*this->tile_width, y*this->tile_height);
+	int posx = ((x-y) * (this->tile_width / 2)) + 600; 
+	int posy = (((x+y) * (this->tile_height / 2)) - this->tilesets[n_tileset].tile_height) + this->tile_height;
+	return sf::Vector2i(posx, posy);
 }
 
 void Map::Draw(sf::RenderWindow *window)
@@ -227,9 +216,11 @@ void Map::Draw(sf::RenderWindow *window)
 			for (int i = 0; i < this->layers.size(); i++)
 			{
 				if (this->layers[i].data[f][c] != 0)
-					this->tilesets[this->NumberTileset(
-					this->layers[i].data[f][c])].Draw(window, 
-					this->Plot(c, f), this->layers[i].data[f][c]);
+				{
+					int n_tileset = this->NumberTileset(this->layers[i].data[f][c]);
+					this->tilesets[n_tileset].Draw(window, 
+					this->Plot(c, f, n_tileset), this->layers[i].data[f][c]);
+				}
 			}
 		}
 	}

@@ -6,7 +6,7 @@ SceneMap* SceneMap::ms_instance = 0;
 
 SceneMap::SceneMap()
 {
-	if(!this->mapa.Init("resources/maps/test_ortg.tmx"))
+	if(!this->mapa.Init("resources/maps/test.tmx"))
 	{
 		std::cerr << "No se ha podido inicializar el mapa" << std::endl;
 	}

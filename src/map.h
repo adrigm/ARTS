@@ -17,15 +17,15 @@ class Map {
 
 public:
 	Map();
-	Map(std::string filename);
 	~Map();
 	
 	bool Init(std::string src);
 	bool LoadFile(std::string filename);
 	void Draw(sf::RenderWindow *window);
 	
-	sf::Vector2i Plot(int x, int y);
+	sf::Vector2i Plot(int x, int y, int n_tileset);
 
+private:
 	// Nombre del mapa
 	std::string name;
 	
@@ -36,6 +36,9 @@ public:
 	// Tamaño de los tiles
 	unsigned int tile_width;
 	unsigned int tile_height;
+	
+	// Establecemos la altura de la base de los tiles
+	unsigned int height_base;
 	
 	// Lista de tilesets
 	std::vector<Tileset> tilesets;

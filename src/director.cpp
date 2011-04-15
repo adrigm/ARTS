@@ -4,7 +4,7 @@ Director* Director::ms_instance = 0;
 
 Director::Director()
 {
-	this->window.Create(sf::VideoMode(800, 576, 32), "ARTS", sf::Style::Titlebar | sf::Style::Close);
+	this->window.Create(sf::VideoMode(1600, 1200, 32), "ARTS", sf::Style::Titlebar | sf::Style::Close);
 	this->window.UseVerticalSync(true);
 	this->quit_flag = false;
 }
