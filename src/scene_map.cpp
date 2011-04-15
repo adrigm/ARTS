@@ -1,12 +1,12 @@
+#include <iostream>
+
 #include "scene_map.h"
 
 SceneMap* SceneMap::ms_instance = 0;
 
 SceneMap::SceneMap()
 {
-	this->image.LoadFromFile("resources/graphics/granjero.png");
-	this->image.SetSmooth(false);
-	this->sprite.SetImage(this->image);
+	this->mapa.LoadFile("resources/maps/test_ortg.tmx");
 }
 
 SceneMap::~SceneMap()
@@ -23,8 +23,7 @@ void SceneMap::Update(float time)
 
 void SceneMap::Draw()
 {
-	this->window->Clear(sf::Color(200, 220, 255));
-	this->window->Draw(this->sprite);
+	mapa.Draw(this->window);
 }
 
 SceneMap* SceneMap::Instance()

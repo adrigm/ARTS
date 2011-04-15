@@ -5,9 +5,11 @@
 #include <string>
 #include <vector>
 #include <cstring>
+#include <SFML/Graphics.hpp>
 #include "libs/pugixml/pugixml.hpp"
 #include "utils/base64.h"
 #include "utils/zlib.h"
+#include "utils/strings_utils.h"
 #include "tileset.h"
 #include "layer.h"
 
@@ -19,7 +21,9 @@ public:
 	~Map();
 	
 	bool LoadFile(std::string filename);
+	void Draw(sf::RenderWindow *window);
 	
+private:
 	// Nombre del mapa
 	std::string name;
 	

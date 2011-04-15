@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "scene_manager.h"
+#include "map.h"
 
 class SceneMap : public Scene {
 
@@ -16,8 +17,7 @@ private:
 	SceneMap();
 	~SceneMap();
 	
-	sf::Image image;
-	sf::Sprite sprite;
+	Map mapa;
 	
 	void Init();
 	void Update(float time);

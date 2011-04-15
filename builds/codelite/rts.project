@@ -30,6 +30,8 @@
       <File Name="../../src/utils/base64.h"/>
       <File Name="../../src/utils/zlib.cpp"/>
       <File Name="../../src/utils/zlib.h"/>
+      <File Name="../../src/utils/strings_utils.h"/>
+      <File Name="../../src/utils/string_utils.cpp"/>
     </VirtualDirectory>
     <VirtualDirectory Name="libs">
       <File Name="../../src/libs/pugixml/pugiconfig.hpp"/>

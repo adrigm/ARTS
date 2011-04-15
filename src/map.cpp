@@ -9,6 +9,11 @@ Map::Map(std::string filename)
 {
 	this->name = "";
 	this->LoadFile(filename);
+	
+	for (int i = 0; i < this->tilesets.size(); i++)
+	{
+		this->tilesets[i].Init();
+	}
 }
 
 Map::~Map()
@@ -80,14 +85,21 @@ bool Map::LoadFile(std::string filename)
 			pugi::xml_node image = node.child("image");
 
 			// Ruta de la imagen del tileset
-			tileset.src_image =  image.attribute("source").value();
+			tileset.src_image =  extrac_name(image.attribute("source").value());
 
 			// Tamaño de la imagen
 			tileset.width = image.attribute("width").as_uint();
 			tileset.height = image.attribute("height").as_uint();
-
+			
 			// Añadimos el tileset a la lista de tilesets
 			this->tilesets.push_back(tileset);
+			
+			// Iniciamos el tileset (cargamos imagen y creamos sprite)
+			if(!this->tilesets[this->tilesets.size()-1].Init())
+			{
+				std::cerr << "Map::LoadFile: No se ha encontrado la imagen " << tileset.src_image << std::endl;
+				return false;
+			}
 		}
 		
 		// Si es un nodo de layer
@@ -176,6 +188,21 @@ bool Map::LoadFile(std::string filename)
 			
 			// Añadimos la capa a la lista de capas
 			this->layers.push_back(layer);
+		}
+	}
+}
+
+void Map::Draw(sf::RenderWindow *window)
+{
+	for (int f = 0; f < this->height; f++)
+	{
+		for (int c = 0; c < this->width; c++)
+		{
+			for (int i = 0; i < this->layers.size(); i++)
+			{
+				if (this->layers[i].data[f][c] != 0)
+					this->tilesets[0].Draw(window, c*this->tile_width, f*this->tile_height, this->layers[i].data[f][c]);
+			}
 		}
 	}
 }

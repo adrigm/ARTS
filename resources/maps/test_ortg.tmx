@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="25" height="18" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="bosque" tilewidth="32" tileheight="32">
+  <image source="../graphics/tilesets/bosque.png" width="256" height="576"/>
+ </tileset>
+ <layer name="base" width="25" height="18">
+  <data encoding="base64" compression="zlib">
+   eJxjZGBgYBzFo3gUj+JRPIpHKAYAOO4Bww==
+  </data>
+ </layer>
+ <layer name="objetos" width="25" height="18">
+  <data encoding="base64" compression="zlib">
+   eJy1lLlOA0EQRCeCxCJE/AKGBHBi48TgBOwf4QowEOAj4Aq4/pk3EiOV2j2tXSFKerJlT/X0TPXuIKV0DMO0rgM4hCPowRmcwwSmZm0fBlJrBCdwKp9jZw/ri6Q1x6Yf29dO4IsUnfE/fFb78n0XurBnfm+jTadWT/63Gdd0AZdwBddw46zRWppl04xvYQZ3cA8PzhqtpVl6GXd+UT3CHBawhJWzh9bSLJtm/ATP8AKv8Oas0VpRvrUZeIcP+IQv+E7rZ1V/lG/TGaip+KN8azOw7RD5o2e49pznmltC2cPeV/GXfL17r81A2WPD7GFV/Fl/vXdPOi9Zbd6v1l+bSe07q8371fpr59a+s7x7j3ptcm7t+wcgLDXV
+  </data>
+ </layer>
+ <layer name="objetos 2" width="25" height="18">
+  <data encoding="base64" compression="zlib">
+   eJzNlLkKAkEQRIc1MxBTNfCKPBKPxCPxSDwSzTTT//8In9CiNjT2rLtowaNhBqpgupgQnqpAFWrhXR3oQg/6MIAhjGAc4tSEFrTVufacwBRmMI/MsKQ9F7CEFawzytCeG9jCDvYZZeTh+Y10PzxKoBCRYXXOk110Zlid+9T3u3/izLA65+m7972sfqTp+0HmMUV2Sd1ZuzrJPDszgng/eJW1q4vMa0SGpTz+Ji3PruoyG5HeZZn/9o/8Uje14hlX
+  </data>
+ </layer>
+ <objectgroup name="Capa de Objetos 1" width="25" height="18">
+  <object name="erferg" type="ergrev" x="551" y="118" width="92" height="62">
+   <properties>
+    <property name="rfeerv" value="7554"/>
+    <property name="vervr" value="7747"/>
+   </properties>
+  </object>
+  <object type="vrerv" x="677" y="454" width="30" height="41"/>
+  <object x="432" y="466"/>
+ </objectgroup>
+</map>
