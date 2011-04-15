@@ -6,7 +6,14 @@ SceneMap* SceneMap::ms_instance = 0;
 
 SceneMap::SceneMap()
 {
-	this->mapa.LoadFile("resources/maps/test_ortg.tmx");
+	if(!this->mapa.Init("resources/maps/test_ortg.tmx"))
+	{
+		std::cerr << "No se ha podido inicializar el mapa" << std::endl;
+	}
+	/*for (int i = 0; i < this->mapa.tilesets.size(); i++)
+	{
+		this->mapa.tilesets[i].Init();
+	}*/
 }
 
 SceneMap::~SceneMap()

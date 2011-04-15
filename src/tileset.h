@@ -12,7 +12,7 @@ public:
 	~Tileset();
 	
 	bool Init();
-	void Draw(sf::RenderWindow *window, int x, int y, int indx);
+	void Draw(sf::RenderWindow *window, sf::Vector2i pos, int indx);
 	void CreateRects();
 	
 	// Nombre del tileset
@@ -35,6 +35,9 @@ public:
 	// Numero de filas y columnas
 	unsigned int fil;
 	unsigned int col;
+	
+	// Numero de tiles
+	unsigned int num_tiles;
 	
 	sf::Image image;
 	sf::Sprite sprite;

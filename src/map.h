@@ -20,10 +20,12 @@ public:
 	Map(std::string filename);
 	~Map();
 	
+	bool Init(std::string src);
 	bool LoadFile(std::string filename);
 	void Draw(sf::RenderWindow *window);
 	
-private:
+	sf::Vector2i Plot(int x, int y);
+
 	// Nombre del mapa
 	std::string name;
 	
@@ -40,6 +42,8 @@ private:
 	
 	// Lista de capas
 	std::vector<Layer> layers;
+	
+	int NumberTileset(int tile);
 };
 
 #endif // MAP_H

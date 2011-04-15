@@ -20,6 +20,26 @@ Map::~Map()
 {
 }
 
+bool Map::Init(std::string src)
+{
+	this->name = "";
+	if(!this->LoadFile(src))
+	{
+		std::cerr << "Error al cargar el mapa" << std::endl;
+		return false;
+	}
+	
+	for (int i = 0; i < this->tilesets.size(); i++)
+	{
+		if(!this->tilesets[i].Init())
+		{
+			std::cerr << "Error al inicializar el tileset " << i << std::endl;
+			return false;
+		}
+	}
+	return true;
+}
+
 bool Map::LoadFile(std::string filename)
 {
 	// Cargamos el archivo de mapa
@@ -94,12 +114,12 @@ bool Map::LoadFile(std::string filename)
 			// Añadimos el tileset a la lista de tilesets
 			this->tilesets.push_back(tileset);
 			
-			// Iniciamos el tileset (cargamos imagen y creamos sprite)
+			/*// Iniciamos el tileset (cargamos imagen y creamos sprite)
 			if(!this->tilesets[this->tilesets.size()-1].Init())
 			{
 				std::cerr << "Map::LoadFile: No se ha encontrado la imagen " << tileset.src_image << std::endl;
 				return false;
-			}
+			}*/
 		}
 		
 		// Si es un nodo de layer
@@ -190,6 +210,12 @@ bool Map::LoadFile(std::string filename)
 			this->layers.push_back(layer);
 		}
 	}
+	return true;
+}
+
+sf::Vector2i Map::Plot(int x, int y)
+{
+	return sf::Vector2i(x*this->tile_width, y*this->tile_height);
 }
 
 void Map::Draw(sf::RenderWindow *window)
@@ -201,8 +227,21 @@ void Map::Draw(sf::RenderWindow *window)
 			for (int i = 0; i < this->layers.size(); i++)
 			{
 				if (this->layers[i].data[f][c] != 0)
-					this->tilesets[0].Draw(window, c*this->tile_width, f*this->tile_height, this->layers[i].data[f][c]);
+					this->tilesets[this->NumberTileset(
+					this->layers[i].data[f][c])].Draw(window, 
+					this->Plot(c, f), this->layers[i].data[f][c]);
 			}
 		}
 	}
+}
+
+// Devuelve el tileset al que pertenece una posición
+int Map::NumberTileset(int tile)
+{
+	for (int i = 0; i < this->tilesets.size(); i++)
+	{
+		if (tile < this->tilesets[i].num_tiles+this->tilesets[i].firstgid)
+			return i;
+	}
+	return -1;
 }

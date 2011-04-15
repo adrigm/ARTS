@@ -1,4 +1,5 @@
 #include "tileset.h"
+#include <iostream>
 
 Tileset::Tileset()
 {
@@ -24,6 +25,9 @@ bool Tileset::Init()
 	this->fil = this->height / this->tile_height;
 	this->col = this->width / this->tile_width;
 	
+	// Numero de tiles
+	this->num_tiles = this->fil * this->col;
+	
 	// Creamos los rects
 	this->CreateRects();
 	
@@ -32,9 +36,9 @@ bool Tileset::Init()
 
 void Tileset::CreateRects()
 {
-	// Añadimos un Rect vacio en la pos 0
+	/*// Añadimos un Rect vacio en la pos 0
 	sf::IntRect _void;
-	this->rects.push_back(_void);
+	this->rects.push_back(_void);*/
 	
 	// Creamos una lista con los rects del tileset
 	for (int f = 0; f < this->fil; f++)
@@ -51,9 +55,9 @@ void Tileset::CreateRects()
 	}
 }
 
-void Tileset::Draw(sf::RenderWindow *window, int x, int y, int indx)
+void Tileset::Draw(sf::RenderWindow *window, sf::Vector2i pos, int indx)
 {
-	this->sprite.SetSubRect(this->rects[indx]);
-	this->sprite.SetPosition(float(x), float(y));
+	this->sprite.SetSubRect(this->rects[indx-this->firstgid]);
+	this->sprite.SetPosition(float(pos.x), float(pos.y));
 	window->Draw(this->sprite);
 }
