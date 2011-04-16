@@ -9,18 +9,29 @@
  <tileset firstgid="241" name="medieval_building_tiles" tilewidth="64" tileheight="192">
   <image source="../graphics/tilesets/medieval_building_tiles.png" width="1024" height="768"/>
  </tileset>
+ <tileset firstgid="305" name="iso-64x64-outside" tilewidth="64" tileheight="64">
+  <image source="../graphics/tilesets/iso-64x64-outside.png" width="640" height="1024"/>
+ </tileset>
+ <tileset firstgid="465" name="grass_and_water" tilewidth="64" tileheight="64">
+  <image source="../graphics/tilesets/grass_and_water.png" width="256" height="384"/>
+ </tileset>
  <layer name="base" width="40" height="40">
   <properties>
    <property name="4y4y" value="544"/>
    <property name="tyjtyjyj" value="55"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt0jEOgDAMBEHzhAD/f2saCoScON1dxBbTuFrp3CLiKNxizn3vBqeurO97V7eNtt2h0aVt1qpuqRrVHQD+qxXc+9SNu/Wdye16KHqrtqzTbV9V22qj8v8AAAAAeOknXHkW
+   eJzt0rENwCAQBMGnBNul0H9vTgiRTfaPmGDyle56i+gAAIe44lv1vuzG3fruSd8zZPT+tc06q+2b1bbamPk/AACglhcrKztG
   </data>
  </layer>
  <layer name="Edificios" width="40" height="40">
   <data encoding="base64" compression="zlib">
-   eJztlk0KgkAUgN9AtCuCVlGXsKCCqDYtW7QKIzpFdALtAkEH7W9dT3Sh49iTcnpW74MPZZzRDwUZgJA9pDkYxoQ0fuzcY6v4To7cAUJp8Okp7Gy5AwzsuAMIyvjOhPfoKICG4q7IJuirE30TtIu66DLSjcYCp5b7KkTfirhHr7CaJFf0jp6JeRviuq2+vDjw/N84QvuaNr+5zvqFNYPCK7JxcsyZo7OYC6tFScboUHu+7id7BEEQhN/nwh1goI37yZYKj9US7s1PaBO7auiNO0YQhL/nAR1EFZc=
+   eJxjYICAVgZMMAmL2CjABC1I7OYBc8XQBFMH2gGjYNCAFsJKBhwUD7QDsIDSgXYAAUCLMItkZGAIhuIoIA5hpIElFIBgRlQcOMzcJwNUL0BDP8VQwX18BPTYAbEREEcAcRgUR0DFQNgej94goNkBSNifDPexENATScAMY9KsJBp8AeL/QPyJgLpYAvK0ch+xwJABf9loDcRmaBgU55vplFejydBjTnVX4AaGRKjxAWIXJByAJLcXLRyNGSE4BEpTCmyB2ALNfnQcgFM3dmAIdFc0GfmZluA4kltgZQ01wm8kgDWj4UQVsG00HEfBKICDzwPtACxAGphHJRkhNNsgzK8fgVgY6C5eIP460I4ZBaNgFIx4AACyYCQQ
+  </data>
+ </layer>
+ <layer name="Capa de patrones 3" width="40" height="40">
+  <data encoding="base64" compression="zlib">
+   eJzt1EENACAMALFhAT3zrwsLPEi2jFbBvS4C+FGu6gKYa1cHXPAAgH68GQAA3jodEADK
   </data>
  </layer>
  <objectgroup name="eventos" width="40" height="40">

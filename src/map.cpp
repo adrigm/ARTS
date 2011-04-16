@@ -209,11 +209,11 @@ sf::Vector2i Map::Plot(int x, int y, int n_tileset)
 
 void Map::Draw(sf::RenderWindow *window)
 {
-	for (int f = 0; f < this->height; f++)
+	for (int i = 0; i < this->layers.size(); i++)
 	{
-		for (int c = 0; c < this->width; c++)
+		for (int f = 0; f < this->height; f++)
 		{
-			for (int i = 0; i < this->layers.size(); i++)
+			for (int c = 0; c < this->width; c++)
 			{
 				if (this->layers[i].data[f][c] != 0)
 				{
