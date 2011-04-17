@@ -202,7 +202,7 @@ bool Map::LoadFile(std::string filename)
 
 sf::Vector2i Map::Plot(int x, int y, int n_tileset)
 {
-	int posx = ((x-y) * (this->tile_width / 2)) + 600; 
+	int posx = ((x-y) * (this->tile_width / 2)) + 400; 
 	int posy = (((x+y) * (this->tile_height / 2)) - this->tilesets[n_tileset].tile_height) + this->tile_height;
 	return sf::Vector2i(posx, posy);
 }

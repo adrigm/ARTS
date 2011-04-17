@@ -26,6 +26,7 @@ private:
 	Scene *new_scene; // Próxima escena activa
 	bool quit_flag; // Control de salida del bucle
 	
+	const sf::Input& input;
 };
 
 #endif // DIRECTOR_H
