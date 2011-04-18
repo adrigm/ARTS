@@ -3,7 +3,7 @@
   <Project Name="rts" Path="rts.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
-      <Project Name="rts" ConfigName="Debug"/>
+      <Project Name="rts" ConfigName="Debug-win"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="rts" ConfigName="Release"/>

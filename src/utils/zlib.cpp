@@ -1,10 +1,10 @@
-#include "zlib.h"
-
 #include <cassert>
 #include <cstdlib>
 #include <fstream>
 #include <iostream>
 #include <zlib.h>
+
+#include "zlib.h"
 
 /**
  * Inflates either zlib or gzip deflated memory. The inflated memory is
